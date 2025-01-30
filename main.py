@@ -1,7 +1,13 @@
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
+import sys
+import os
+
+# Add the parent directory to sys.path to ensure qr_code_generator can be found
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from flask import Flask, render_template
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from qr_code_generator.app import qr_app  # Importing QR Code Generator app
-from scanner.app import scanner_app  # Importing Scanner app
+from scanner.app import scanner_app  # Import Scanner app
 
 # Main Flask app
 main_app = Flask(__name__, template_folder="templates", static_folder="static")
@@ -15,10 +21,9 @@ main_app.wsgi_app = DispatcherMiddleware(
     }
 )
 
-# Route for the homepage
 @main_app.route('/')
 def index():
-    return render_template('index.html')  # Render the homepage (make sure index.html exists in templates folder)
+    return render_template('index.html')  # Now renders the styled homepage
 
 if __name__ == "__main__":
-    main_app.run(host="0.0.0.0", port=3000, debug=True)  # Run the app in debug mode on all IPs (0.0.0.0)
+    main_app.run(host="0.0.0.0", port=3000, debug=True)  # Enable debug mode for easier development
