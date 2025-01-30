@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap');
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #62161e, #720033, #69007d, #212ba9);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    /* width: 90%; */
+    /* max-width: 1000px; */
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #212ba9;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #69007d;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph and Text Styles */
+p {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1em;
+    color: black;
+}
+    /* Centering the icon and text horizontally and vertically */
+    .features-list li {
+        display: flex; /* Aligns the icon and text in a row */
+        align-items: center; /* Vertically aligns the icon and text */
+        justify-content: center; /* Centers the icon and text horizontally */
+        margin-bottom: 10px; /* Optional: Adds spacing between list items */
+    }
+
+    /* Custom color for the icon and circle */
+    .features-list .fa-check-circle {
+        color: #720033; /* Change color of the checkmark circle */
+        margin-right: 10px; /* Add some space between the icon and text */
+    }
+
+    /* Centering the list as a whole */
+    .features-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the list items in the middle of the container */
+        padding-left: 0; /* Remove the default left padding */
+    }
+
+/* li {
+    margin: 10px 0;
+} */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-1 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #212ba9;
+    color: #fff;
+}
+
+.btn-1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background-color: #69007d;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    background-color: #69007d;
+}
+
+/* Gradient Button */
+.btn-2 {
+    background: linear-gradient(to right, #62161e, #720033, #69007d, #212ba9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #fff;
+   
+    transition: 0.3s;
+}
+
+.btn-2:hover {
+    color: #fff;
+    background-image: linear-gradient(to right, #212ba9, #69007d, #770054, #720033, #62161e);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+.img-fluid{
+    border-radius: 20px;
+}
+
+/* Custom Tab Styling */
+.custom-tab {
+    background: linear-gradient(to right, #62161e, #720033, #69007d, #212ba9);
+    color: black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.custom-tab:hover {
+    background-color: #69007d;
+    color: white;
+}
+
+.custom-tab.active {
+    background-color: #720033;
+    border-color: #69007d;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #720033;
+    border-color: #69007d;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+    
+    .btn-2 {
+        width: 100%;
+    }
+    .custom-tab{
+        padding: 5px 8px;
+    }
+}
+
+/* Tab Content Styling */
+.tab-content {
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* .tab-pane {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+} */
+
+/* Mobile-Friendly Button */
+@media (max-width: 600px) {
+    .btn-2 {
+        width: 100%;
+    }
+}

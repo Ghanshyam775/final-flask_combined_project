@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome CDN -->
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Heading and Subtitle -->
+        <div class="text-center mb-5">
+            <h1>Welcome to the QR Code Application</h1>
+        </div>
+
+        <div class="row">
+            <!-- Left Column for Tabs and Content -->
+            <div class="col-lg-8 col-md-12">
+                <!-- Tabs Navigation -->
+                <ul class="nav nav-pills mb-4" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active custom-tab" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Project Overview</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link custom-tab" id="how-it-works-tab" data-bs-toggle="tab" href="#how-it-works" role="tab" aria-controls="how-it-works" aria-selected="false">How It Works</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link custom-tab" id="features-tab" data-bs-toggle="tab" href="#features" role="tab" aria-controls="features" aria-selected="false">Features</a>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content" id="myTabContent">
+                    <!-- Project Overview Tab -->
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                        <h2>Project Overview</h2>
+                        <p>This is the overview of the QR Code Application, which is designed as a final year project. The application includes a QR Code Generator and Scanner, making it simple to create and scan QR codes for various purposes.</p>
+                    </div>
+                    <!-- How It Works Tab -->
+                    <div class="tab-pane fade" id="how-it-works" role="tabpanel" aria-labelledby="how-it-works-tab">
+                        <h2>How It Works</h2>
+                        <p>The application allows users to generate a QR code by entering their data, such as name, email, and custom fields. The generated QR code can be scanned to retrieve this information. It connects with Firebase for storage and authentication.</p>
+                    </div>
+                    <!-- Features Tab -->
+                    <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+                        <h2>Features</h2>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check-circle"></i> Generate custom QR codes with user data</li>
+                            <li><i class="fas fa-check-circle"></i> Scan QR codes to retrieve encoded information</li>
+                            <li><i class="fas fa-check-circle"></i> Firebase authentication and data storage</li>
+                            <li><i class="fas fa-check-circle"></i> Responsive and user-friendly interface</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column for Button and Image -->
+            <div class="col-lg-4 col-md-12 text-center">
+                <!-- Image with path from the static folder -->
+                <img src="{{ url_for('static', filename='qrimg.png') }}" alt="QR Code Image" class="img-fluid  mb-4" onerror="this.style.display='none'">
+                <!-- Buttons stacked one below the other -->
+                <div class="d-flex flex-column gap-3">
+                    <a href="/qrcode" class="btn btn-1">Go to QR Code Generator</a>
+                    <a href="/scanner" class="btn btn-2">Go to QR Code Scanner</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (for enabling tabs functionality) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
