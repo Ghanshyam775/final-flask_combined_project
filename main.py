@@ -1,12 +1,6 @@
-import sys
-import os
-
-# Add the parent directory to sys.path to ensure qr_code_generator can be found
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from flask import Flask, render_template
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from qr_code_generator.app import qr_app  # Importing QR Code Generator app
+from flask import Flask, render_template
+from qr_code_generator.app import qr_app 
 from scanner.app import scanner_app  # Import Scanner app
 
 # Main Flask app
