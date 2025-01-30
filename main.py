@@ -1,7 +1,7 @@
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from flask import Flask, render_template
-from qr_code_generator.app import qr_app  # Importing QR code generator app
-from scanner.app import scanner_app  # Importing scanner app
+from qr_code_generator.app import qr_app  # Importing QR Code Generator app
+from scanner.app import scanner_app  # Importing Scanner app
 
 # Main Flask app
 main_app = Flask(__name__, template_folder="templates", static_folder="static")
